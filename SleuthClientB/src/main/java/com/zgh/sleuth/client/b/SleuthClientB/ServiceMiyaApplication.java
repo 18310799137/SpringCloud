@@ -1,7 +1,5 @@
 package com.zgh.sleuth.client.b.SleuthClientB;
 
-import java.util.logging.Logger;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,6 +7,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @SpringBootApplication
 @RestController
@@ -22,14 +23,13 @@ public class ServiceMiyaApplication {
 
 	@RequestMapping("/hi")
 	public String home() {
-		LOG.info("this is service-b");
-
+		LOG.log(Level.INFO, "hi is being called");
 		return restTemplate.getForObject("http://localhost:9001/servicea", String.class);
 	}
 
 	@RequestMapping("/serviceb")
 	public String info() {
-		LOG.info("this is service-b");
+		LOG.log(Level.INFO, "info is being called");
 		return "hi i'm serviceb!";
 	}
 
