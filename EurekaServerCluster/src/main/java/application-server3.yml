@@ -1,0 +1,11 @@
+server:  
+  port: 8763
+spring:  
+  application:  
+    name: EurekaCluster
+eureka:  
+  instance:  
+    hostname: server3 #对应的hostname  
+  client:  
+    service-url:  
+      defaultZone: http://server1:8761/eureka/,http://server2:8762/eureka/,http://server3:8763/eureka/ #三个服务节点互联
