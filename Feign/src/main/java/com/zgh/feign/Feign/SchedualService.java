@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
- * Created by fangzhipeng on 2017/4/6.
+ * @author FreeGuardian
  */
-@FeignClient(value = "service-hi")
-public interface SchedualServiceHi {
-    @RequestMapping(value = "/hi",method = RequestMethod.GET)
-    String sayHiFromClientOne(@RequestParam(value = "name") String name);
+@FeignClient(value = "service-provider")
+public interface SchedualService {
+	@RequestMapping(value = "/myService", method = RequestMethod.GET)
+	String feignService(@RequestParam(value = "name") String name);
 }

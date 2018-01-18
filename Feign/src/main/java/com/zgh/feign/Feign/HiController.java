@@ -9,10 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HiController {
 
-    @Autowired
-    SchedualServiceHi schedualServiceHi;
-    @RequestMapping(value = "/hi",method = RequestMethod.GET)
-    public String sayHi(@RequestParam String name){
-        return schedualServiceHi.sayHiFromClientOne(name);
-    }
+	@Autowired
+	SchedualService schedualService;
+
+	@RequestMapping(value = "/feignService", method = RequestMethod.GET)
+	public String feignService(@RequestParam String name) {
+		return schedualService.feignService(name);
+	}
 }

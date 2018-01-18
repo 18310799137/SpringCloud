@@ -6,17 +6,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Created by fangzhipeng on 2017/4/6.
+ * @author FreeGuardian
  */
 @RestController
 public class HelloControler {
 
-    @Autowired
-    HelloService helloService;
-    @RequestMapping(value = "/hiService")
-    public String hiService(@RequestParam String name){
-        return helloService.hiService(name);
-    }
+	@Autowired
+	HelloService helloService;
 
+	@RequestMapping(value = "/hiService")
+	public String hiService(@RequestParam String name) {
+		return helloService.hiService(name);
+	}
 
 }

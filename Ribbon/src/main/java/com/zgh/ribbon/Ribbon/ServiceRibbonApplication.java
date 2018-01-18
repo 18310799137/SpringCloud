@@ -22,4 +22,4 @@ public class ServiceRibbonApplication {
 	RestTemplate restTemplate() {
 		return new RestTemplate();
 	}
-} 
+}
